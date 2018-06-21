@@ -17,16 +17,5 @@ public class Starter implements CommandLineRunner {
     public void run(String... args) throws Exception {
 
         System.out.println(castle);
-
-        Quest saveThePrincess  = new Quest("Uratuj księżniczkę");
-        Knight lancelot = new Knight("Lancelot", 29, saveThePrincess);
-
-        System.out.println(lancelot);
-
-        Quest killTheDragon = new Quest("Zabij smoka");
-        Knight percival = new Knight("Percival", 31);
-        percival.setQuest(killTheDragon);
-
-        System.out.println(percival);
     }
 }
