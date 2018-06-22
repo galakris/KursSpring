@@ -22,6 +22,11 @@ public class Castle {
         this.knight = knight;
     }
 
+    Castle(Knight knight, String name){
+        this.knight = knight;
+        this.name = name;
+    }
+
     @PostConstruct
     public void build()
     {
