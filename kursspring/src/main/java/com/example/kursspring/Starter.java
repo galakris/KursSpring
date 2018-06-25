@@ -1,6 +1,5 @@
 package com.example.kursspring;
 
-import com.example.component.TestComponent;
 import com.example.kursspring.domain.Castle;
 import com.example.kursspring.domain.Knight;
 import com.example.kursspring.domain.Quest;
@@ -13,9 +12,6 @@ public class Starter implements CommandLineRunner {
 
     @Autowired
     Castle castle;
-
-    @Autowired
-    TestComponent testComponent;
 
     @Override
     public void run(String... args) throws Exception {
