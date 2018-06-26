@@ -4,10 +4,10 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <context:property-placeholder location="classpath:castle.properties"/>
+    <context:property-placeholder location="classpath:knightRepository.properties"/>
 
     <bean id="castle"
-          class="com.example.kursspring.domain.Castle"
+          class="com.example.kursspring.domain.repository.KnightRepository"
           init-method="build"
           destroy-method="tearDown">
         <constructor-arg index="0" ref="lancelot"/>
@@ -16,7 +16,12 @@
 
     <bean id="tournament"
           class="com.example.kursspring.domain.Tournament">
-        <property name="knight" ref="percival"/>
+        <property name="knights">
+            <list>
+                <ref bean="percival"/>
+                <ref bean="lancelot"/>
+            </list>
+        </property>
     </bean>
 
 </beans>

@@ -1,6 +1,6 @@
 package com.example.kursspring;
 
-import com.example.kursspring.domain.Castle;
+import com.example.kursspring.domain.repository.KnightRepository;
 import com.example.kursspring.domain.Knight;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -17,7 +17,7 @@ public class KursspringApplicationTests {
 	@Autowired
 	Knight knight;
 	@Autowired
-	Castle castle;
+    KnightRepository knightRepository;
 
 	@Test
 	public void contextLoads() {
@@ -26,7 +26,7 @@ public class KursspringApplicationTests {
 	@Test
 	public void testCastle(){
 		String except = "Znajduje się tu zamek o nazwie Castle Black. Zamieszkały przec rycerza: Rycerz o imieniu: Lancelot(29). Ma zadanie: Uratuj Księżniczkę";
-		assertEquals(except, castle.toString());
+		assertEquals(except, knightRepository.toString());
 	}
 
 }

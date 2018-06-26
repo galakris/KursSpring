@@ -1,9 +1,8 @@
 package com.example.kursspring;
 
-import com.example.kursspring.domain.Castle;
-import com.example.kursspring.domain.Knight;
-import com.example.kursspring.domain.Quest;
-import com.example.kursspring.domain.Tournament;
+import com.example.kursspring.domain.repository.KnightRepository;
+import com.example.kursspring.domain.repository.QuestRepository;
+import com.example.kursspring.services.QuestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -12,18 +11,21 @@ import org.springframework.stereotype.Component;
 public class Starter implements CommandLineRunner {
 
     @Autowired
-    Castle castle;
+    KnightRepository knightRepository;
 
     @Autowired
-    Tournament tournament;
+    QuestRepository questRepository;
+
+    @Autowired
+    QuestService questService;
 
     @Override
     public void run(String... args) throws Exception {
 
-        System.out.println(castle);
-        System.out.println(tournament);
-        tournament.duel();
-        System.out.println(castle);
-        System.out.println(tournament);
+        questService.assignRandomQuest("Lancelot");
+        questService.assignRandomQuest("Percival");
+
+        System.out.println(knightRepository);
+        System.out.println(questRepository);
     }
 }

@@ -1,10 +1,5 @@
 package com.example.kursspring.domain;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
-
 
 public class Knight {
 
@@ -30,12 +25,6 @@ public class Knight {
         return age;
     }
 
-    //    public Knight(String name, int age){
-//        this.name = name;
-//        this.age = age;
-//    }
-
-    @Autowired
     public void setQuest(Quest quest) {
         this.quest = quest;
     }
