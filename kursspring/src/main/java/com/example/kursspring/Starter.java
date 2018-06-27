@@ -22,10 +22,7 @@ public class Starter implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        questService.assignRandomQuest("Lancelot");
-        questService.assignRandomQuest("Percival");
+//        questRepository.createRandomQuest();
 
-        System.out.println(knightRepository);
-        System.out.println(questRepository);
     }
 }
